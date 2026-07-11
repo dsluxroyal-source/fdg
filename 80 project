@@ -1,0 +1,60 @@
+import time
+objectives = {
+    "learn python": [
+        "Complete Python basics.",
+        "Practice coding every day.",
+        "Build beginner projects.",
+        "Learn OOP.",
+        "Learn libraries like Tkinter and OpenCV.",
+        "Start AI and Machine Learning."
+    ],
+    "lose weight": [
+        "Exercise 30 minutes daily.",
+        "Reduce sugary foods.",
+        "Drink plenty of water.",
+        "Sleep 7-8 hours.",
+        "Track your weekly progress."
+    ],
+    "build muscle": [
+        "Follow a strength training program.",
+        "Eat enough protein.",
+        "Sleep 8 hours.",
+        "Increase workout intensity gradually."
+    ],
+    "become programmer": [
+        "Choose a programming language.",
+        "Practice daily.",
+        "Build projects.",
+        "Learn Git and GitHub.",
+        "Create a portfolio."
+    ],
+    "become ai engineer": [
+        "Master Python.",
+        "Learn mathematics.",
+        "Study Machine Learning.",
+        "Learn Deep Learning.",
+        "Build AI projects."
+    ]
+}
+def understand_goal():
+    goal = input("\nEnter your objective: ").lower().strip()
+    if goal == "exit":
+        return False
+    if goal in objectives:
+        print("\nJarvis is thinking...")
+        time.sleep(2)
+        print("\nObjective Found!")
+        print("\nRecommended Plan:\n")
+        steps = objectives[goal]
+        for number, step in enumerate(steps, start=1):
+            print(f"{number}. {step}")
+    else:
+        print("\nSorry, I don't understand that objective yet.")
+    return True
+print("===== JARVIS OBJECTIVE SYSTEM =====")
+while True:
+    print("\nType your objective.")
+    print("Type 'exit' to quit.")
+    if not understand_goal():
+        print("\nGoodbye!")
+        break
